@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.01, maximum-scale=10.0, user-scalable=yes">
+<title>Rectangle with Buttons</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 80;
+    /* For mobile zoom out */
+    zoom: 100%; /* Default zoom */
+  }
+  
+  .c {
+    position: fixed;
+    width: 700px;
+    height: 550px;
+    border: 1px solid red;
+  }
+
+  .c1 {
+    position: fixed;
+    width: 600px;
+    height: 400px;
+    border: 2px solid black;
+  }
+  
+   .c2 {
+    position: fixed;
+    width: 500px;
+    height: 300px;
+    border: 2px solid black;
+  }
+  
+   .c3 {
+    position: fixed;
+    width: 400px;
+    height: 200px;
+    border: 2px solid black;
+  }
+
+
+  .button {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+
+  .button.red {
+    background-color: red;
+  }
+  
+  .button.yellow {
+    background-color: yellow;
+  }
+
+  .top-left {
+    top: -10px;
+    left: -10px;
+  }
+
+  .top-right {
+    top: -10px;
+    right: -10px;
+  }
+
+  .bottom-left {
+    bottom: -10px;
+    left: -10px;
+  }
+
+  .bottom-right {
+    bottom: -10px;
+    right: -10px;
+  }
+
+  .top-middle {
+    top: -10px;
+    left: calc(50% - 10px);
+  }
+
+  .bottom-middle {
+    bottom: -10px;
+    left: calc(50% - 10px);
+  }
+
+  .left-middle {
+    top: calc(50% - 10px);
+    left: -10px;
+  }
+
+  .right-middle {
+    top: calc(50% - 10px);
+    right: -10px;
+  }
+
+  /* Media Query for Mobile Zoom Out */
+  @media only screen and (max-width: 600px) {
+    body {
+      zoom: 75%; /* Adjust zoom level for mobile screens */
+    }
+  }
+</style>
+</head>
+<body>
+
+ <div class="c">
+    <div class="rectangle"></div>
+  </div>
+  
+
+  <div class="c1">
+    <button class="button top-left" onclick="changeColor(this)"></button>
+    <button class="button top-right" onclick="changeColor(this)"></button>
+    <button class="button bottom-left" onclick="changeColor(this)"></button>
+    <button class="button bottom-right" onclick="changeColor(this)"></button>
+    <button class="button top-middle" onclick="changeColor(this)"></button>
+    <button class="button bottom-middle" onclick="changeColor(this)"></button>
+    <button class="button left-middle" onclick="changeColor(this)"></button>
+    <button class="button right-middle" onclick="changeColor(this)"></button>
+  </div>
+  
+  
+  <div class="c2">
+    <button class="button top-left" onclick="changeColor(this)"></button>
+    <button class="button top-right" onclick="changeColor(this)"></button>
+    <button class="button bottom-left" onclick="changeColor(this)"></button>
+    <button class="button bottom-right" onclick="changeColor(this)"></button>
+    <button class="button top-middle" onclick="changeColor(this)"></button>
+    <button class="button bottom-middle" onclick="changeColor(this)"></button>
+    <button class="button left-middle" onclick="changeColor(this)"></button>
+    <button class="button right-middle" onclick="changeColor(this)"></button>
+  </div>
+  
+    <div class="c3">
+    <button class="button top-left" onclick="changeColor(this)"></button>
+    <button class="button top-right" onclick="changeColor(this)"></button>
+    <button class="button bottom-left" onclick="changeColor(this)"></button>
+    <button class="button bottom-right" onclick="changeColor(this)"></button>
+    <button class="button top-middle" onclick="changeColor(this)"></button>
+    <button class="button bottom-middle" onclick="changeColor(this)"></button>
+    <button class="button left-middle" onclick="changeColor(this)"></button>
+    <button class="button right-middle" onclick="changeColor(this)"></button>
+  </div>
+  
+
+
+  <script>
+    function changeColor(button) {
+      if (button.classList.contains('red')) {
+        button.classList.remove('red');
+        button.classList.add('yellow');
+      } else if (button.classList.contains('yellow')) {
+        button.classList.remove('yellow');
+      } else {
+        button.classList.add('red');
+      }
+    }
+  </script>
+</body>
+</html>
